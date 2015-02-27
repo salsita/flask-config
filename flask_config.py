@@ -4,7 +4,7 @@ The configuration class is not expected to be instantiated. Create different con
 """
 
 __all__ = 'createConfig Config MetaConfig'.split()
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 import os
 import sys

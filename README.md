@@ -1,6 +1,6 @@
 # [Flask-Config](https://github.com/salsita/flask-config) <a href='https://github.com/salsita'><img align='right' title='Salsita' src='https://www.google.com/a/cpanel/salsitasoft.com/images/logo.gif?alpha=1' /></a>
 
-Flask configuration class
+Flask configuration class.
 
 [![Latest Version](https://pypip.in/version/Flask-Config/badge.svg)]
 (https://pypi.python.org/pypi/Flask-Config/)
@@ -123,6 +123,14 @@ if __name__ == '__main__':
 
 ## Changelog
 
-#### 0.1.0
+### 0.1.1
+
+#### Fixes
+
+- Fix package setup to not require dependencies preinstalled.
+
+### 0.1.0
+
+#### Features
 
 * Initial release.
