@@ -123,7 +123,7 @@ def init(
         if 'debian' in platform.dist():
             try:
                 import stdeb
-            except ImportError, e:
+            except ImportError:
                 pass
 
     return setup
