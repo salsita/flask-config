@@ -123,6 +123,16 @@ if __name__ == '__main__':
 
 ## Changelog
 
+### 0.2.0
+
+#### Features
+
+- Remove all environment variable mappings except env selector.
+
+#### Fixes
+
+- Fix package setup on Python 3.
+
 ### 0.1.1
 
 #### Fixes
