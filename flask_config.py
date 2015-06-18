@@ -87,17 +87,12 @@ class Config(object):
     envSelectProperty = 'ENV_SELECT'
     envMap = dict(
         ENV_SELECT = 'APP_ENV',
-        SECRET_KEY = 'SECRET_KEY',
-        SQLALCHEMY_DATABASE_URI = 'DATABASE_URL',
         )
     envHelp= dict(
         ENV_SELECT = 'select environment configuration',
-        SECRET_KEY = 'secret key for signing session cookies',
-        SQLALCHEMY_DATABASE_URI = 'sqlalchemy database uri including credentials',
         )
     envDefaults = dict(
         ENV_SELECT = 'dev',
-        SECRET_KEY = 'This has to be changed on deployment using SECRET_KEY environment variable',
         )
     envInitialized = False
     envKeyStart = set(string.ascii_uppercase)
