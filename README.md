@@ -2,13 +2,15 @@
 
 Flask configuration class.
 
-[![Latest Version](https://pypip.in/version/Flask-Config/badge.svg)]
+[![Version](https://badge.fury.io/gh/salsita%2Fflask-config.svg)]
+(https://github.com/salsita/flask-config/tags)
+[![PyPI package](https://badge.fury.io/py/Flask-Config.svg)]
 (https://pypi.python.org/pypi/Flask-Config/)
-[![Downloads](https://pypip.in/download/Flask-Config/badge.svg)]
+[![Downloads](https://img.shields.io/pypi/dm/Flask-Config.svg)]
 (https://pypi.python.org/pypi/Flask-Config/)
-[![Supported Python versions](https://pypip.in/py_versions/Flask-Config/badge.svg)]
+[![Supported Python versions](https://img.shields.io/pypi/pyversions/Flask-Config.svg)]
 (https://pypi.python.org/pypi/Flask-Config/)
-[![License](https://pypip.in/license/Flask-Config/badge.svg)]
+[![License](https://img.shields.io/pypi/l/Flask-Config.svg)]
 (https://pypi.python.org/pypi/Flask-Config/)
 
 
