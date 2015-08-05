@@ -125,6 +125,12 @@ if __name__ == '__main__':
 
 ## Changelog
 
+### 0.2.1
+
+#### Features
+
+- Allow updating config class properties.
+
 ### 0.2.0
 
 #### Features
