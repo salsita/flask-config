@@ -3,12 +3,18 @@
 The configuration class is not expected to be instantiated. Create different configurations as its subclasses.
 """
 
-__all__ = 'createConfig Config MetaConfig'.split()
+__all__ = 'createConfig Config MetaConfig classproperty'.split()
 __version__ = '0.2.0'
 
 import os
 import sys
 import string
+
+class classproperty(object):
+    def __init__(self, f):
+        self.f = f
+    def __get__(self, obj, owner):
+        return self.f(owner)
 
 class MetaConfig(type):
     """Base configuration metaclass used to define class stringifier and read-only class properties.
@@ -138,6 +144,19 @@ class Config(object):
         return __cls__
 
     @classmethod
+    def updateProperties(__cls__, __settings__=None, **settings):
+        """Updates configuration from dictionary and/or keyword arguments."""
+        if (__settings__):
+            __settings__.update(settings)
+        else:
+            __settings__ = settings
+
+        for key in __settings__:
+            setattr(__cls__, key, classproperty(__settings__[key]))
+
+        return __cls__
+
+    @classmethod
     def isKey(cls, key):
         """Tests if key is a valid configuration value key.
 
@@ -169,7 +188,7 @@ class Config(object):
         pass
 
 def createConfig(namespace=None, updateEnv=None, updateEnvMap=None, updateEnvHelp=None, updateEnvDefaults=None,
-    config=Config, initFromEnv=True, **settings):
+    updateProperties=None, config=Config, initFromEnv=True, **settings):
     """Creates a base configuration class."""
     namespace = sys.modules[namespace] if isinstance(namespace, str) else namespace
 
@@ -191,6 +210,9 @@ def createConfig(namespace=None, updateEnv=None, updateEnvMap=None, updateEnvHel
 
     if updateEnvDefaults:
         Config.envDefaults.update(updateEnvDefaults)
+
+    if updateProperties:
+        Config.updateProperties(updateProperties)
 
     if initFromEnv:
         Config.initFromEnv()
